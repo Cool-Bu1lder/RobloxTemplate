@@ -1,6 +1,6 @@
 {
   "[luau]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   }
 }
