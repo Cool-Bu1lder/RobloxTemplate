@@ -1,5 +1,5 @@
-name: Deploy to Staging
-
+# Deploy any time code is pushed to the 'main' branch
+name: Deploy
 on:
   push:
     branches:
@@ -7,15 +7,22 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: ok-nick/setup-aftman@v0.3.0
-        name: Install aftman
-        with:
-          token: ${{ SECRETS.GITHUB_TOKEN }}
+      - name: Install Aftman
+        uses: ok-nick/setup-aftman@v0
 
-      - run: rbxcloud experience publish -f game.rbxl -p ? -u ? -t published -a ${{ secrets.API_KEY }}
+      - name: Build
+        run: rojo build -o game.rbxlx
+
+      - name: Publish
+        shell: bash
+        env:
+          UID: 6318336782 # Universe ID
+          PID: 18648028672 # Place ID
+          API_KEY: ${{ secrets.PUBLISH_KEY }} # API Key (keep this in your GitHub Repository Secrets)
+          FILE: game.rbxlx # Roblox place file (e.g. might have a step before this to build the file with Rojo)
+
+        run: rbxcloud experience publish -a "$API_KEY" -u "$UID" -p "$PID" -t published -f "$FILE"
