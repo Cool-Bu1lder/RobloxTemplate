@@ -51,9 +51,4 @@ jobs:
         run: npm i -g moonwave
 
       - name: Build
-        run: moonwave build
-
-      - name: Publish Javadoc
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
-        with:
-          folder: build
+        run: moonwave build --publish
