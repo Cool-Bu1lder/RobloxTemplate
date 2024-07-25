@@ -36,19 +36,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
           args: --check ./src
-
-  docs:
-    name: Build Document
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install node
-        uses: actions/setup-node@v4
-
-      - name: Install Moonwave
-        run: npm i -g moonwave
-
-      - name: Build
-        run: moonwave build --publish
