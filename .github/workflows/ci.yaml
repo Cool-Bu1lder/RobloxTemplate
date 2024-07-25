@@ -3,7 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - dev
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -33,3 +36,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
           args: --check ./src
+#TODO: Unit Tests?
