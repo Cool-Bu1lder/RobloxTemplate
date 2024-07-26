@@ -34,27 +34,7 @@ jobs:
       - name: Install moonwave
         run: npm i -g moonwave
       - name: Build with Moonwave
-        run: moonwave build
-      - name: Upload Atrifact
-        uses: actions/upload-artifact@v4
-        with:
-          path: build
-# Deploy job      
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        run: moonwave build --publish
 
 
     
