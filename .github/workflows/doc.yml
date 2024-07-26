@@ -8,21 +8,53 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
+ # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+permissions:
+  contents: read
+  pages: write      # to deploy to Pages
+  id-token: write   # to verify the deployment originates from an appropriate source
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+  
 jobs:
-  doc:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install node
+      - name: Setup Node
         uses: actions/setup-node@v4
-
       - name: Install moonwave
         run: npm i -g moonwave
+      - name: Build with Moonwave
+        run: moonwave build
+      - name: Upload Atrifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: build
+# Deploy job      
+  deploy:
+    # Add a dependency to the build job
+    needs: build
 
-      - name: Create documentation
-        run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config user.name "GitHub Actions"
-          moonwave build --publish
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+
+
+    
