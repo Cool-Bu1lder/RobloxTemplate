@@ -22,7 +22,7 @@ concurrency:
   
 jobs:
   # Build job
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,16 +33,12 @@ jobs:
         run: npm i -g moonwave
       - name: Build with Moonwave
         run: moonwave build
-          
-  # Deployment job
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: build
+          
+
 
     
