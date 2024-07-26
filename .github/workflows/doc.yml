@@ -23,6 +23,6 @@ jobs:
 
       - name: Create documentation
         run: |
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "142286071+Cool-Bu1lder@users.noreply.github.com"
           git config user.name "GitHub Actions"
           moonwave build --publish
