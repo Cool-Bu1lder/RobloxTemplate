@@ -5,6 +5,18 @@
 /*.rbxlx.lock
 /*.rbxl.lock
 
-/*api*
+# Api keys
+/*api_key*
 
+# Moonwave doc build folder
 /build
+
+# Moonwave file
+/sourcemap.json
+
+# Wally Packages
+/Packages
+/Serverpackages
+
+# Wally File
+/wally.lock
