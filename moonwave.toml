@@ -2,3 +2,7 @@ title = "RobloxTemplate"
 gitRepoUrl = "https://github.com/Cool-Bu1lder/RobloxTemplate"
 
 gitSourceBranch = "master"
+
+[home]
+enabled = true
+includeReadme = false
