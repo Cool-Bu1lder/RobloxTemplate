@@ -9,6 +9,8 @@ react = "jsdotlua/react@17.1.0"
 react-roblox = "jsdotlua/react-roblox@17.1.0"
 promise = "evaera/promise@4.0.0"
 janitor = "howmanysmall/janitor@1.16.0"
+testez = "roblox/testez@0.4.1"
 
 [server-dependencies]
+cmdr = "evaera/cmdr@1.12.0"
 Datastore = "uiscript/suphis-datastore-module@0.2.0"
