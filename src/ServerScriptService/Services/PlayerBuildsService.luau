@@ -330,7 +330,8 @@ function PlayerBuildsService._HandleCreate(player)
 		buildsDataStore.SaveOnClose = false
 	end
 
-	local playerFolder = Instance.new("Folder", BuildsFolder)
+	local playerFolder = Instance.new("Folder")
+	playerFolder.Parent = BuildsFolder
 	playerFolder.Name = player.Name
 	PlayerBuildsService.PlayerBuildsFolders[player.Name] = playerFolder
 end
@@ -348,7 +349,7 @@ function PlayerBuildsService._HandleDestroy(player)
 	PlayerBuildsService.OwnedNodes[player.Name] = nil
 end
 
-function PlayerBuildsService._StateChanged(state, datastore)
+function PlayerBuildsService._StateChanged(_state, datastore)
 	while datastore.State == false do -- Keep trying to re-open if the state is closed
 		if datastore:Open(PlayerBuildsService.DefaultSlotTemplate) ~= "Success" then
 			task.wait(6)
