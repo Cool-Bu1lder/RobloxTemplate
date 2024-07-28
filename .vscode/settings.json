@@ -2,5 +2,18 @@
   "[luau]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
     "editor.formatOnSave": true
+  },
+  "material-icon-theme.folders.associations": {
+    "ReplicatedStorage": "shared",
+    "StarterPlayerScripts": "scripts",
+    "StarterCharacterScripts": "android",
+    "ServerScriptService": "server",
+    "ServerStorage": "database",
+    "ReplicatedFirst": "supabase",
+    "Workspace": "global",
+    "Terrain": "environment",
+    "ServerPackages": "packages",
+    "StarterPlayer": "client",
+    "Textures": "images"
   }
 }
