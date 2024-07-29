@@ -1,0 +1,33 @@
+{
+  "ClassName": "Folder",
+  "Children": [
+    {
+      "Name": "PlaceNode",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "PlaceObject",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "DestroyNode",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "RenameSlot",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "SaveNodeToSlot",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "LoadNodeFromSlot",
+      "ClassName": "RemoteFunction"
+    },
+    {
+      "Name": "RequestBuildSlotData",
+      "ClassName": "RemoteFunction"
+    }
+  ]
+}

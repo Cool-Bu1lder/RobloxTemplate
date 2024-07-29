@@ -1,6 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local _BuildSystemEvents = ReplicatedStorage.Events.BuildSystem
+local BuildSystemEvents = ReplicatedStorage.Events.BuildSystem2
 
 local PlayerBuildingService = {}
 
@@ -28,6 +28,28 @@ function PlayerBuildingService.OnStart()
 	-- Save Node To Slot [player, slotIndex] -- Node must already exist
 
 	-- Load Node from slot [player, slotIndex] -- Node must already exist
+
+	local PlaceNode = BuildSystemEvents.PlaceNode
+	local PlaceObject = BuildSystemEvents.PlaceObject
+	local DestroyNode = BuildSystemEvents.DestroyNode
+	local RenameSlot = BuildSystemEvents.RenameSlot
+	local SaveNodeToSlot = BuildSystemEvents.SaveNodeToSlot
+	local LoadNodeFromSlot = BuildSystemEvents.LoadNodeFromSlot
+
+	PlaceNode.OnServerInvoke(function(player: Player, position: Vector3)
+		print(player)
+		print(position)
+	end)
+
+	PlaceObject.OnServerInvoke(function(player: Player, position: Vector3, object: string)
+		print(player)
+		print(position)
+		print(object)
+	end)
+
+	DestroyNode.OnServerInvoke(function(player: Player)
+		print(player)
+	end)
 end
 
 return PlayerBuildingService
