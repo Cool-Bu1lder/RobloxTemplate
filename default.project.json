@@ -1,16 +1,16 @@
 {
   "name": "RobloxTemplate",
-  "globIgnorePaths": ["**/*.spec.lua"],
+  "globIgnorePaths": [
+    "**/*.spec.lua"
+  ],
   "tree": {
     "$className": "DataModel",
-
     "HttpService": {
       "$className": "HttpService",
       "$properties": {
         "HttpEnabled": false
       }
     },
-
     "Workspace": {
       "$path": "src/Workspace",
       "$properties": {
@@ -30,23 +30,37 @@
         }
       }
     },
-
     "Players": {
       "$properties": {
-        "CharacterAutoLoads": false
+        "CharacterAutoLoads": true
       }
     },
-
     "Lighting": {
       "$properties": {
-        "Ambient": [0.275, 0.275, 0.275],
+        "Ambient": [
+          0.275,
+          0.275,
+          0.275
+        ],
         "Brightness": 3,
-        "ColorShift_Bottom": [0, 0, 0],
-        "ColorShift_Top": [0, 0, 0],
+        "ColorShift_Bottom": [
+          0,
+          0,
+          0
+        ],
+        "ColorShift_Top": [
+          0,
+          0,
+          0
+        ],
         "EnvironmentDiffuseScale": 1,
         "EnvironmentSpecularScale": 1,
         "GlobalShadows": true,
-        "OutdoorAmbient": [0.275, 0.275, 0.275],
+        "OutdoorAmbient": [
+          0.275,
+          0.275,
+          0.275
+        ],
         "ShadowSoftness": 0.2,
         "Technology": "Future",
         "ClockTime": 14.5,
@@ -59,8 +73,16 @@
         "$properties": {
           "Density": 0.3,
           "Offset": 0.25,
-          "Color": [0.781, 0.781, 0.781],
-          "Decay": [0.416, 0.44, 0.491],
+          "Color": [
+            0.781,
+            0.781,
+            0.781
+          ],
+          "Decay": [
+            0.416,
+            0.44,
+            0.491
+          ],
           "Glare": 0,
           "Haze": 0
         }
@@ -109,45 +131,37 @@
         }
       }
     },
-
     "MaterialService": {
       "$properties": {
         "Use2022Materials": true
       }
     },
-
     "ReplicatedFirst": {
       "$path": "src/ReplicatedFirst"
     },
-
     "ReplicatedStorage": {
       "$path": "src/ReplicatedStorage",
       "Packages": {
         "$path": "Packages"
       }
     },
-
     "ServerScriptService": {
       "$path": "src/ServerScriptService",
       "Packages": {
         "$path": "ServerPackages"
       }
     },
-
     "ServerStorage": {
       "$path": "src/ServerStorage"
     },
-
     "StarterGui": {
       "$properties": {
         "ScreenOrientation": "LandscapeLeft"
       }
     },
-
     "StarterPack": {
       "$path": "src/StarterPack"
     },
-
     "StarterPlayer": {
       "StarterCharacter": {
         "$path": "src/StarterPlayer/StarterCharacter.rbxmx"
@@ -170,15 +184,14 @@
         "CharacterJumpHeight": 7.2
       }
     },
-
-    "Teams": { "$path": "src/Teams" },
-
+    "Teams": {
+      "$path": "src/Teams"
+    },
     "SoundService": {
       "$properties": {
         "RespectFilteringEnabled": true
       }
     },
-
     "TextChatService": {
       "$properties": {
         "ChatVersion": "TextChatService"
@@ -218,7 +231,12 @@
         "UiCorner": {
           "$className": "UICorner",
           "$properties": {
-            "CornerRadius": { "UDim": [0.0, 12] }
+            "CornerRadius": {
+              "UDim": [
+                0.0,
+                12
+              ]
+            }
           }
         },
         "UiGradient": {
@@ -229,17 +247,28 @@
                 "keypoints": [
                   {
                     "time": 0.0,
-                    "color": [1.0, 1.0, 1.0]
+                    "color": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
                   },
                   {
                     "time": 1.0,
-                    "color": [1.0, 1.0, 1.0]
+                    "color": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
                   }
                 ]
               }
             },
             "Enabled": false,
-            "Offset": [0, 0],
+            "Offset": [
+              0,
+              0
+            ],
             "Rotation": 0.0,
             "Transparency": {
               "NumberSequence": {
@@ -262,10 +291,30 @@
         "UIPadding": {
           "$className": "UIPadding",
           "$properties": {
-            "PaddingBottom": { "UDim": [0.0, 8] },
-            "PaddingLeft": { "UDim": [0.0, 8] },
-            "PaddingRight": { "UDim": [0.0, 8] },
-            "PaddingTop": { "UDim": [0.0, 8] }
+            "PaddingBottom": {
+              "UDim": [
+                0.0,
+                8
+              ]
+            },
+            "PaddingLeft": {
+              "UDim": [
+                0.0,
+                8
+              ]
+            },
+            "PaddingRight": {
+              "UDim": [
+                0.0,
+                8
+              ]
+            },
+            "PaddingTop": {
+              "UDim": [
+                0.0,
+                8
+              ]
+            }
           }
         },
         "ImageLabel": {
