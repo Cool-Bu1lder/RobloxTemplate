@@ -14,7 +14,7 @@ MyFirstClass.__index = MyFirstClass
     @return number -- Returns the sum of `a` and `b`
 ]=]
 function MyFirstClass:add(a, b)
-    return a + b
+	return a + b
 end
 
 return MyFirstClass
