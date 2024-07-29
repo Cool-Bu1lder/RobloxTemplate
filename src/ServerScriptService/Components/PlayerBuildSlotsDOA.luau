@@ -1,3 +1,7 @@
+local _PlayerBuildSlots = require(game:GetService("ServerScriptService").Components.PlayerBuildSlots)
+
+local _DataStoreModule = require(game:GetService("ServerScriptService").Packages.Datastore)
+
 --[=[
     @class PlayerBuildSlotsDOA
 
@@ -12,6 +16,7 @@ local PlayerBuildSlotsDOA = {}
     @param BuildSlots -- The Builds Slots that you want to add which belong to a player
 ]=]
 function PlayerBuildSlotsDOA.AddPlayerBuildSlots(BuildSlots: SharedTable)
+	--local dataStore = DataStoreModule.find("Builds", tostring(player.UserId))
 	print(BuildSlots)
 end
 
